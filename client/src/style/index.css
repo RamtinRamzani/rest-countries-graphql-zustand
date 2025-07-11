@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+
+  --breakpoint-3xl: 1920px;
+
+  --color-primary-50: oklch(0.92 0.02 258.5);
+  --color-primary-100: oklch(0.89 0.02 258);
+  --color-primary-200: oklch(0.8 0.03 257.5);
+  --color-primary-300: oklch(0.72 0.04 257);
+  --color-primary-400: oklch(0.63 0.05 256.5);
+  --color-primary-500: oklch(0.54 0.06 256);
+  --color-primary-600: oklch(0.46 0.05 255.5);
+  --color-primary-700: oklch(0.38 0.04 255);
+  --color-primary-800: oklch(0.3 0.03 254.5);
+  --color-primary-900: oklch(0.2 0.02 254);
+  --color-primary-950: oklch(0.15 0.01 253.5);
+
+  /* - Lime: hsl(61, 70%, 52%)
+- Red: hsl(4, 69%, 50%) */
+}

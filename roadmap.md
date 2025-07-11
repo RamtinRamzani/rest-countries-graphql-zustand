@@ -2,11 +2,11 @@
 
 ## GraphQL Server
 
-1-> Create JSON file of countries
-2-> Setup Apollo Server
-3-> Define Country type in schema
-4-> Implement query to get all countries
-5-> Implement query to get one country by code
+1-> Create JSON file of countries ☑️
+2-> Setup Apollo Server ☑️
+3-> Define Country type in schema ☑️
+4-> Build Type defs ☑️
+5-> Build Resolver ☑️
 
 ## React Frontend
 
