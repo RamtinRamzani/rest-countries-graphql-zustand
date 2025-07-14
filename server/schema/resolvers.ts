@@ -8,6 +8,7 @@ const resolvers = {
         code: country.cca2,
         capital: country.capital ? country.capital[0] : "❌CAPITAL❌",
         region: country.region,
+        subregion: country.subregion,
         population: country.population,
         flag: country.flags.png,
         languages: country.languages
@@ -37,6 +38,7 @@ const resolvers = {
         code: match.cca2,
         capital: match.capital ? match.capital[0] : "Unknown",
         region: match.region,
+        subregion: match.subregion,
         population: match.population,
         flag: match.flags.png,
         languages: match.languages

@@ -1,17 +1,18 @@
 import MainContainer from "../ui/MainContainer";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const Header = () => {
   return (
     <header className="shadow-sm">
-      <MainContainer className="flex items-center py-4">
+      <MainContainer
+        className="flex items-center py-4"
+        data-theme="color-base-100"
+      >
         <div className="flex w-full justify-between items-center">
-          <h1 className="text-lg font-bold text-primary-800">
+          <h1 className="text-lg font-bold text-gray-800">
             Where in the world?
           </h1>
-          <div className="text-sm font-semibold text-primary-500 flex gap-2">
-            <span>🌙</span>
-            <span>Dark Mode</span>
-          </div>
+          <ThemeToggle />
         </div>
       </MainContainer>
     </header>

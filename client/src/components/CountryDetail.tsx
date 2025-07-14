@@ -1,10 +1,111 @@
+import { useQuery } from "@apollo/client";
 import Back from "../ui/Back";
 import MainContainer from "../ui/MainContainer";
+import { GET_ALL_CUNTRIES_DATA } from "../graphql/queries";
+import { useParams } from "react-router-dom";
+
+type Currency = {
+  code: string;
+  name: string;
+  symbol: string;
+};
+
+type Country = {
+  name: string;
+  code: string;
+  capital: string;
+  region: string;
+  subregion: string;
+  population: number;
+  flag: string;
+  languages: string[];
+  borders: string[];
+  currencies: Currency[];
+};
 
 const CountryDetail = () => {
+  const { data } = useQuery(GET_ALL_CUNTRIES_DATA);
+  const { code } = useParams();
+
+  if (!data) return null;
+
+  const country = data.allCountries.find(
+    (country: Country) => country.code === code
+  );
+
+  if (!country)
+    return (
+      <p className="text-3xl mx-auto text-center mt-20 py-4 rounded-md bg-primary-200 shadow-sm w-1/2">
+        Country not found
+      </p>
+    );
+
   return (
-    <MainContainer className="text-primary-900 h-screen mt-14">
+    <MainContainer className="text-primary-900 my-[clamp(2rem,4vw,6rem)]">
       <Back />
+      <div
+        className="flex max-md:flex-col items-center gap-[clamp(1rem,8vw,8rem)] mt-[clamp(2rem,4vw,6rem)] lg:mx-[clamp(1rem,4vw,8rem)]"
+        key={country.name}
+      >
+        <img
+          src={country.flag}
+          className="w-1/2 max-md:w-full h-[350px]"
+          alt=""
+        />
+        <div className="w-1/2 max-md:w-full flex flex-col gap-8">
+          <h2 className="font-bold text-3xl">{country.name}</h2>
+
+          <div className="flex max-md:flex-col  max-md:gap-2 justify-between">
+            <div className="flex flex-col gap-2">
+              {[
+                { label: "Name", value: country.name },
+                {
+                  label: "Population",
+                  value: country.population.toLocaleString("en-US"),
+                },
+                { label: "Region", value: country.region },
+                { label: "Subregion", value: country.subregion },
+                { label: "Capital", value: country.capital },
+              ].map(({ label, value }) => (
+                <h3 className="text-primary-700" key={label}>
+                  <span className="font-semibold">{label}:</span> {value}
+                </h3>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-2">
+              {[
+                {
+                  label: "Currency",
+                  value: country.currencies[0]?.name ?? "Have'nt",
+                },
+                {
+                  label: "Languages",
+                  value: country.languages.join(", "),
+                },
+              ].map(({ label, value }) => (
+                <h3 className="text-primary-700" key={label}>
+                  <span className="font-semibold">{label}:</span> {value}
+                </h3>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 mt-8">
+            <h3 className="text-primary-700 font-semibold">
+              Border Countries:
+            </h3>
+            {country.borders.slice(0, 3).map((border) => (
+              <span
+                className="shadow-sm px-6 py-1 text-sm text-primary-500 rounded-md"
+                key={border}
+              >
+                {border}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </MainContainer>
   );
 };

@@ -12,6 +12,7 @@ const typeDefs = gql`
     code: String!
     capital: String!
     region: String!
+    subregion: String!
     population: Int!
     flag: String!
     languages: [String!]!

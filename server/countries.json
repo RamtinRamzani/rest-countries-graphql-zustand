@@ -6,6 +6,7 @@
     "cca2": "IR",
     "capital": ["Tehran"],
     "region": "Asia",
+    "subregion": "Southern Asia",
     "population": 83992953,
     "flags": {
       "png": "https://flagcdn.com/w320/ir.png"
@@ -25,6 +26,7 @@
     "cca2": "FR",
     "capital": ["Paris"],
     "region": "Europe",
+    "subregion": "Western Europe",
     "population": 67391582,
     "flags": {
       "png": "https://flagcdn.com/w320/fr.png"
@@ -44,6 +46,7 @@
     "cca2": "BR",
     "capital": ["Brasília"],
     "region": "Americas",
+    "subregion": "South America",
     "population": 212559417,
     "flags": {
       "png": "https://flagcdn.com/w320/br.png"
@@ -63,6 +66,7 @@
     "cca2": "IN",
     "capital": ["New Delhi"],
     "region": "Asia",
+    "subregion": "Southern Asia",
     "population": 1380004385,
     "flags": {
       "png": "https://flagcdn.com/w320/in.png"
@@ -83,6 +87,7 @@
     "cca2": "US",
     "capital": ["Washington, D.C."],
     "region": "Americas",
+    "subregion": "Northern America",
     "population": 331002651,
     "flags": {
       "png": "https://flagcdn.com/w320/us.png"
@@ -102,6 +107,7 @@
     "cca2": "CN",
     "capital": ["Beijing"],
     "region": "Asia",
+    "subregion": "Eastern Asia",
     "population": 1439323776,
     "flags": {
       "png": "https://flagcdn.com/w320/cn.png"
@@ -137,6 +143,7 @@
     "cca2": "DE",
     "capital": ["Berlin"],
     "region": "Europe",
+    "subregion": "Western Europe",
     "population": 83783942,
     "flags": {
       "png": "https://flagcdn.com/w320/de.png"
@@ -156,6 +163,7 @@
     "cca2": "AU",
     "capital": ["Canberra"],
     "region": "Oceania",
+    "subregion": "Australia and New Zealand",
     "population": 25687041,
     "flags": {
       "png": "https://flagcdn.com/w320/au.png"
@@ -175,6 +183,7 @@
     "cca2": "CA",
     "capital": ["Ottawa"],
     "region": "Americas",
+    "subregion": "Northern America",
     "population": 37742154,
     "flags": {
       "png": "https://flagcdn.com/w320/ca.png"
@@ -195,6 +204,7 @@
     "cca2": "RU",
     "capital": ["Moscow"],
     "region": "Europe",
+    "subregion": "Eastern Europe",
     "population": 145912025,
     "flags": {
       "png": "https://flagcdn.com/w320/ru.png"
@@ -229,6 +239,7 @@
     "cca2": "ZA",
     "capital": ["Pretoria", "Cape Town", "Bloemfontein"],
     "region": "Africa",
+    "subregion": "Southern Africa",
     "population": 59308690,
     "flags": {
       "png": "https://flagcdn.com/w320/za.png"
@@ -250,6 +261,7 @@
     "cca2": "MX",
     "capital": ["Mexico City"],
     "region": "Americas",
+    "subregion": "Central America",
     "population": 128932753,
     "flags": {
       "png": "https://flagcdn.com/w320/mx.png"
@@ -269,6 +281,7 @@
     "cca2": "EG",
     "capital": ["Cairo"],
     "region": "Africa",
+    "subregion": "Northern Africa",
     "population": 102334404,
     "flags": {
       "png": "https://flagcdn.com/w320/eg.png"
@@ -288,6 +301,7 @@
     "cca2": "IT",
     "capital": ["Rome"],
     "region": "Europe",
+    "subregion": "Southern Europe",
     "population": 60317116,
     "flags": {
       "png": "https://flagcdn.com/w320/it.png"
@@ -307,6 +321,7 @@
     "cca2": "NG",
     "capital": ["Abuja"],
     "region": "Africa",
+    "subregion": "Western Africa",
     "population": 206139589,
     "flags": {
       "png": "https://flagcdn.com/w320/ng.png"
@@ -326,6 +341,7 @@
     "cca2": "AR",
     "capital": ["Buenos Aires"],
     "region": "Americas",
+    "subregion": "South America",
     "population": 45195777,
     "flags": {
       "png": "https://flagcdn.com/w320/ar.png"
@@ -345,6 +361,7 @@
     "cca2": "ES",
     "capital": ["Madrid"],
     "region": "Europe",
+    "subregion": "Southern Europe",
     "population": 47351567,
     "flags": {
       "png": "https://flagcdn.com/w320/es.png"
@@ -364,6 +381,7 @@
     "cca2": "GB",
     "capital": ["London"],
     "region": "Europe",
+    "subregion": "Northern Europe",
     "population": 67886011,
     "flags": {
       "png": "https://flagcdn.com/w320/gb.png"
@@ -383,6 +401,7 @@
     "cca2": "TR",
     "capital": ["Ankara"],
     "region": "Asia",
+    "subregion": "Western Asia",
     "population": 84339067,
     "flags": {
       "png": "https://flagcdn.com/w320/tr.png"
@@ -402,6 +421,7 @@
     "cca2": "SA",
     "capital": ["Riyadh"],
     "region": "Asia",
+    "subregion": "Western Asia",
     "population": 34813871,
     "flags": {
       "png": "https://flagcdn.com/w320/sa.png"

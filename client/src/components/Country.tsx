@@ -1,6 +1,8 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import MainContainer from "../ui/MainContainer";
 import Filter from "./Filter";
+import { GET_ALL_CUNTRIES_DATA } from "../graphql/queries";
+import { useNavigate } from "react-router-dom";
 
 type Country = {
   name: string;
@@ -13,39 +15,25 @@ type Country = {
   borders: [string];
 };
 
-const GET_ALL_COUNTRY = gql`
-  query allCountries {
-    allCountries {
-      name
-      capital
-      flag
-      capital
-      region
-      population
-      flag
-      languages
-    }
-  }
-`;
-
 const Country = () => {
-  const { data, loading } = useQuery(GET_ALL_COUNTRY);
-  console.log(data);
+  const { data, loading } = useQuery(GET_ALL_CUNTRIES_DATA);
+  const navigate = useNavigate();
 
   if (loading) {
     return <h2>DATA IS LOADING ...</h2>;
   }
   return (
-    <MainContainer>
+    <MainContainer className="mb-10">
       <Filter />
 
-      <div className="grid grid-cols-4 gap-20">
-        {/* <div className="rounded-sm shadow-sm">Helloo</div> */}
-
+      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 xl:gap-20 md:gap-14 max-sm:mx-4">
         {data.allCountries.map((country: Country) => (
           <div
-            className="rounded-sm shadow-sm text-primary-900"
+            className="rounded-sm shadow-sm text-primary-900 cursor-pointer"
             key={country.code}
+            onClick={() => {
+              navigate(`/country/${country.code}`);
+            }}
           >
             <img
               src={country.flag}
@@ -64,7 +52,7 @@ const Country = () => {
                 <span className="font-semibold">Region: </span>
                 {country.region}
               </div>
-              <div className="pb-12">
+              <div className="pb-8">
                 <span className="font-semibold text-primary-800">
                   Capital:{" "}
                 </span>

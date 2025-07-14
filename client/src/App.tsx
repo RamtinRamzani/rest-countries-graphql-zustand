@@ -1,15 +1,15 @@
-// import Country from "./components/Country";
-import CountryDetail from "./components/CountryDetail";
-import Header from "./components/Header";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
+import { ApolloProvider } from "@apollo/client";
+import { client } from "./apollo/client";
 
 const App = () => {
   return (
-    <main className="pb-20 bg-white">
-      <Header />
-
-      {/* <Country /> */}
-      <CountryDetail />
-    </main>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </ApolloProvider>
   );
 };
 
