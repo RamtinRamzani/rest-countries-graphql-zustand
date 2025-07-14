@@ -39,25 +39,6 @@
   },
   {
     "name": {
-      "common": "Japan"
-    },
-    "cca2": "JP",
-    "capital": ["Tokyo"],
-    "region": "Asia",
-    "population": 126476461,
-    "flags": {
-      "png": "https://flagcdn.com/w320/jp.png"
-    },
-    "languages": {
-      "jpn": "Japanese"
-    },
-    "borders": [],
-    "currencies": {
-      "JPY": { "name": "Japanese yen", "symbol": "¥" }
-    }
-  },
-  {
-    "name": {
       "common": "Brazil"
     },
     "cca2": "BR",
@@ -340,25 +321,6 @@
   },
   {
     "name": {
-      "common": "South Korea"
-    },
-    "cca2": "KR",
-    "capital": ["Seoul"],
-    "region": "Asia",
-    "population": 51780579,
-    "flags": {
-      "png": "https://flagcdn.com/w320/kr.png"
-    },
-    "languages": {
-      "kor": "Korean"
-    },
-    "borders": ["KP"],
-    "currencies": {
-      "KRW": { "name": "South Korean won", "symbol": "₩" }
-    }
-  },
-  {
-    "name": {
       "common": "Argentina"
     },
     "cca2": "AR",
@@ -431,25 +393,6 @@
     "borders": ["AM", "AZ", "BG", "GE", "GR", "IR", "IQ", "SY"],
     "currencies": {
       "TRY": { "name": "Turkish lira", "symbol": "₺" }
-    }
-  },
-  {
-    "name": {
-      "common": "Indonesia"
-    },
-    "cca2": "ID",
-    "capital": ["Jakarta"],
-    "region": "Asia",
-    "population": 273523615,
-    "flags": {
-      "png": "https://flagcdn.com/w320/id.png"
-    },
-    "languages": {
-      "ind": "Indonesian"
-    },
-    "borders": ["TL", "MY", "PG"],
-    "currencies": {
-      "IDR": { "name": "Indonesian rupiah", "symbol": "Rp" }
     }
   },
   {

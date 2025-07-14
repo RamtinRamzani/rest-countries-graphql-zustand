@@ -7,11 +7,11 @@ interface MainContainerProps {
 
 const MainContainer = ({ children, className }: MainContainerProps) => {
   return (
-    <div
+    <section
       className={`mx-[clamp(1rem,4vw,6rem)] md:mx-[clamp(4rem,8vw,8rem)] max-w-[1900px] ${className}`}
     >
       {children}
-    </div>
+    </section>
   );
 };
 

@@ -1,13 +1,16 @@
+// import Country from "./components/Country";
+import CountryDetail from "./components/CountryDetail";
 import Header from "./components/Header";
-import MainContainer from "./ui/MainContainer";
 
-function App() {
+const App = () => {
   return (
-    <main>
+    <main className="pb-20 bg-white">
       <Header />
-      <MainContainer>HELLO</MainContainer>
+
+      {/* <Country /> */}
+      <CountryDetail />
     </main>
   );
-}
+};
 
 export default App;
