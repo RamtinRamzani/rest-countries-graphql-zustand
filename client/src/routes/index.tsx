@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import AppLayout from "../ui/AppLayout";
-import Country from "../components/Country";
-import CountryDetail from "../components/CountryDetail";
+
+import { lazy } from "react";
+const AppLayout = lazy(() => import("../ui/AppLayout"));
+const Country = lazy(() => import("../components/Country"));
+const CountryDetail = lazy(() => import("../components/CountryDetail"));
 
 const AppRoutes = () => {
   return (
