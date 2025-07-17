@@ -1,44 +1,51 @@
 import { useQuery } from "@apollo/client";
 import Back from "../ui/Back";
 import MainContainer from "../ui/MainContainer";
-import { GET_ALL_CUNTRIES_DATA } from "../graphql/queries";
+import { CountryType, GET_ALL_CUNTRIES_DATA } from "../graphql/queries";
 import { useParams } from "react-router-dom";
-
-type Currency = {
-  code: string;
-  name: string;
-  symbol: string;
-};
-
-type Country = {
-  name: string;
-  code: string;
-  capital: string;
-  region: string;
-  subregion: string;
-  population: number;
-  flag: string;
-  languages: string[];
-  borders: string[];
-  currencies: Currency[];
-};
+import { useEffect, useState } from "react";
+import SkeletonDetail from "./SkeletonDetail";
 
 const CountryDetail = () => {
-  const { data } = useQuery(GET_ALL_CUNTRIES_DATA);
+  const { data, loading, error } = useQuery(GET_ALL_CUNTRIES_DATA);
   const { code } = useParams();
+  const [isDelayedLoading, setIsDelayedLoading] = useState(true);
 
-  if (!data) return null;
+  useEffect(() => {
+    if (!loading) {
+      const timer = setTimeout(() => {
+        setIsDelayedLoading(false);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
+
+  if (isDelayedLoading || loading) {
+    return (
+      <MainContainer className="my-[clamp(2rem,4vw,6rem)]">
+        <Back />
+        <SkeletonDetail />
+      </MainContainer>
+    );
+  }
+
+  if (error) {
+    return (
+      <h2 className="text-center text-primary-700">Error: {error.message}</h2>
+    );
+  }
+
+  if (!data) {
+    return <p className="text-center text-primary-700">No data available</p>;
+  }
 
   const country = data.allCountries.find(
-    (country: Country) => country.code === code
+    (country: CountryType) => country.code === code
   );
 
-  if (!country)
-    return (
-      <p className="text-3xl mx-auto text-center mt-20 py-4 rounded-md bg-primary-200 shadow-sm w-1/2">
-        Country not found
-      </p>
-    );
+  if (!country) {
+    return <p className="text-center text-primary-700">Country not found</p>;
+  }
 
   return (
     <MainContainer className="text-primary-900 my-[clamp(2rem,4vw,6rem)]">
@@ -49,8 +56,8 @@ const CountryDetail = () => {
       >
         <img
           src={country.flag}
-          className="w-1/2 max-md:w-full h-[350px]"
-          alt=""
+          className="w-1/2 max-md:w-full h-[200px] sm:h-[350px] rounded-sm shadow-sm"
+          alt={country.name}
         />
         <div className="w-1/2 max-md:w-full flex flex-col gap-8">
           <h2 className="font-bold text-3xl">{country.name}</h2>
@@ -95,7 +102,7 @@ const CountryDetail = () => {
             <h3 className="text-primary-700 font-semibold">
               Border Countries:
             </h3>
-            {country.borders.slice(0, 3).map((border) => (
+            {country.borders.slice(0, 3).map((border: string) => (
               <span
                 className="shadow-sm px-6 py-1 text-sm text-primary-500 rounded-md"
                 key={border}

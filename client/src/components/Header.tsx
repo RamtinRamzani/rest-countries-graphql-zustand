@@ -3,7 +3,7 @@ import ThemeToggle from "../ui/ThemeToggle";
 
 const Header = () => {
   return (
-    <header className="shadow-sm">
+    <header className="shadow-sm bg-gray-100">
       <MainContainer
         className="flex items-center py-4"
         data-theme="color-base-100"
