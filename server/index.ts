@@ -1,12 +1,12 @@
-const { ApolloServer } = require("apollo-server");
-const { typeDefs } = require("./schema/type-defs");
-const { resolvers } = require("./schema/resolvers");
+import { ApolloServer } from "apollo-server";
+import typeDefs from "./schema/type-defs";
+import resolvers from "./schema/resolvers";
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
 
-server.listen({ port: 4000 }).then(({ url }: { url: string }) => {
+server.listen().then(({ url }: { url: string }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
