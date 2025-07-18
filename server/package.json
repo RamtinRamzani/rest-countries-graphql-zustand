@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@apollo/server": "^4.12.2",
+    "@vercel/node": "^5.3.6",
     "apollo-server": "^3.13.0",
     "graphql": "^16.11.0"
   },
