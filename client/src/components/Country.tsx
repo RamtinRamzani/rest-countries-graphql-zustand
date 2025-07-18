@@ -73,7 +73,7 @@ const Country = () => {
       <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 xl:gap-20 md:gap-14 max-sm:mx-4">
         {filteredCountries.map((country: CountryType) => (
           <div
-            className="rounded-sm shadow-sm text-primary-900 cursor-pointer"
+            className="rounded-sm shadow-sm text-primary-900 cursor-pointer dark:bg-primary-700 dark:text-primary-100 dark:border dark:border-primary-600 transition-all duration-300"
             key={country.code}
             onClick={() => {
               navigate(`/country/${country.code}`);
@@ -85,19 +85,23 @@ const Country = () => {
               alt={country.name}
             />
             <div className="px-4 pt-4 flex flex-col gap-2">
-              <h2 className="font-bold text-lg mb-4">{country.name}</h2>
+              <h2 className="font-bold text-lg mb-4 dark:text-white">
+                {country.name}
+              </h2>
               <div>
-                <span className="font-semibold text-primary-800">
+                <span className="font-semibold text-primary-800 dark:text-primary-50">
                   Population:{" "}
                 </span>
                 {country.population.toLocaleString("en-US")}
               </div>
               <div>
-                <span className="font-semibold">Region: </span>
+                <span className="font-semibold dark:text-primary-50">
+                  Region:{" "}
+                </span>
                 {country.region}
               </div>
               <div className="mb-8">
-                <span className="font-semibold text-primary-800">
+                <span className="font-semibold text-primary-800 dark:text-primary-50">
                   Capital:{" "}
                 </span>
                 {country.capital}

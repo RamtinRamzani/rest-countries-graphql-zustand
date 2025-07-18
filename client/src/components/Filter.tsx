@@ -23,7 +23,7 @@ const Filter = () => {
 
   return (
     <section className="flex max-sm:flex-col gap-8 justify-between my-10">
-      <label className="input relative bg-white shadow-sm text-primary-700 max-sm:w-full">
+      <label className="input relative bg-white dark:bg-primary-100 dark:text-primary-900 shadow-sm text-primary-700 max-sm:w-full">
         <svg
           className="h-[1em] opacity-50"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const Filter = () => {
       </label>
 
       <select
-        className="select bg-white text-primary-800 shadow-sm sm:w-1/4 w-2/3 cursor-pointer"
+        className="select bg-white text-primary-800 shadow-sm sm:w-1/4 w-2/3 cursor-pointer dark:bg-primary-100 dark:text-primary-900"
         onChange={(e) => setRegion(e.target.value)}
         // defaultValue="Pick a region"
       >

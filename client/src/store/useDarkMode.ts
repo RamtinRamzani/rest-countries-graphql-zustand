@@ -1,20 +1,26 @@
 import { create } from "zustand";
 
-type DarkModeStateAction = {
+type DarkModeState = {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  setDarkModeFromStorage: () => void;
 };
 
-const getInitialDarkMode = () => localStorage.getItem("darkMode") === "true";
+export const useDarkMode = create<DarkModeState>((set) => ({
+  isDarkMode: false,
 
-export const useDarkMode = create<DarkModeStateAction>((set) => ({
-  isDarkMode: getInitialDarkMode(),
   toggleDarkMode: () =>
     set((state) => {
       const newDarkMode = !state.isDarkMode;
       localStorage.setItem("darkMode", newDarkMode.toString());
-
       document.documentElement.classList.toggle("dark", newDarkMode);
       return { isDarkMode: newDarkMode };
+    }),
+
+  setDarkModeFromStorage: () =>
+    set(() => {
+      const isDark = localStorage.getItem("darkMode") === "true";
+      document.documentElement.classList.toggle("dark", isDark);
+      return { isDarkMode: isDark };
     }),
 }));

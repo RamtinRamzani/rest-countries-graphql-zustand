@@ -31,12 +31,18 @@ const CountryDetail = () => {
 
   if (error) {
     return (
-      <h2 className="text-center text-primary-700">Error: {error.message}</h2>
+      <h2 className="text-center text-primary-700 dark:text-primary-50">
+        Error: {error.message}
+      </h2>
     );
   }
 
   if (!data) {
-    return <p className="text-center text-primary-700">No data available</p>;
+    return (
+      <p className="text-center text-primary-700 dark:text-primary-50">
+        No data available
+      </p>
+    );
   }
 
   const country = data.allCountries.find(
@@ -51,7 +57,7 @@ const CountryDetail = () => {
     <MainContainer className="text-primary-900 my-[clamp(2rem,4vw,6rem)]">
       <Back />
       <div
-        className="flex max-md:flex-col items-center gap-[clamp(1rem,8vw,8rem)] mt-[clamp(2rem,4vw,6rem)] lg:mx-[clamp(1rem,4vw,8rem)]"
+        className="flex max-md:flex-col items-center gap-[clamp(1rem,8vw,8rem)] mt-[clamp(2rem,4vw,6rem)] lg:mx-[clamp(1rem,4vw,8rem)] transition-all duration-500"
         key={country.name}
       >
         <img
@@ -60,9 +66,9 @@ const CountryDetail = () => {
           alt={country.name}
         />
         <div className="w-1/2 max-md:w-full flex flex-col gap-8">
-          <h2 className="font-bold text-3xl">{country.name}</h2>
+          <h2 className="font-bold text-3xl dark:text-white">{country.name}</h2>
 
-          <div className="flex max-md:flex-col  max-md:gap-2 justify-between">
+          <div className="flex max-md:flex-col max-md:gap-2 justify-between">
             <div className="flex flex-col gap-2">
               {[
                 { label: "Name", value: country.name },
@@ -74,7 +80,10 @@ const CountryDetail = () => {
                 { label: "Subregion", value: country.subregion },
                 { label: "Capital", value: country.capital },
               ].map(({ label, value }) => (
-                <h3 className="text-primary-700" key={label}>
+                <h3
+                  className="text-primary-700 dark:text-primary-100"
+                  key={label}
+                >
                   <span className="font-semibold">{label}:</span> {value}
                 </h3>
               ))}
@@ -91,7 +100,10 @@ const CountryDetail = () => {
                   value: country.languages.join(", "),
                 },
               ].map(({ label, value }) => (
-                <h3 className="text-primary-700" key={label}>
+                <h3
+                  className="text-primary-700 dark:text-primary-100"
+                  key={label}
+                >
                   <span className="font-semibold">{label}:</span> {value}
                 </h3>
               ))}
@@ -99,12 +111,12 @@ const CountryDetail = () => {
           </div>
 
           <div className="flex items-center gap-4 mt-8">
-            <h3 className="text-primary-700 font-semibold">
+            <h3 className="text-primary-700 font-semibold dark:text-primary-50">
               Border Countries:
             </h3>
             {country.borders.slice(0, 3).map((border: string) => (
               <span
-                className="shadow-sm px-6 py-1 text-sm text-primary-500 rounded-md"
+                className="shadow-sm px-6 py-1 text-sm text-primary-500 dark:border dark:border-primary-600 dark:text-primary-200 rounded-md"
                 key={border}
               >
                 {border}

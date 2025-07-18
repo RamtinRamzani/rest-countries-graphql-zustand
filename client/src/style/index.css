@@ -19,6 +19,8 @@
   --color-secondary: teal;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-display: "Satoshi", "sans-serif";
 
